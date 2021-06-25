@@ -1,0 +1,143 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <% if (typeof title !='undefined' ) { %>
+            <title>
+                <%= title %>
+            </title>
+            <% } else { %>
+                <title>RCCG INDIA MISSION</title>
+                <% } %>
+
+                    <meta name="description" content="">
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+                    <!-- Favicon -->
+                    <link rel="shortcut icon" href="https://res.cloudinary.com/ihezurumba/image/upload/c_scale,w_32/v1624618634/rccg-app/025-pigeon_ddrqxe_k5p2ek.ico" type="image/x-icon">
+                    <link rel="icon" href="https://res.cloudinary.com/ihezurumba/image/upload/c_scale,w_32/v1624618634/rccg-app/025-pigeon_ddrqxe_k5p2ek.ico" type="image/x-icon">
+
+                    <!-- Google Fonts -->
+                    <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900"
+                        rel="stylesheet"> -->
+                    <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800"
+                        rel="stylesheet">
+                    <link rel="preconnect" href="https://fonts.gstatic.com">
+                    <link
+                        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600&display=swap"
+                        rel="stylesheet">
+                    <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+                    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+
+                    <!-- Bootstrap -->
+                    <link rel="stylesheet" href="/css/assets/bootstrap.min.css">
+
+                    <!-- Fontawesome Icon -->
+                    <link rel="stylesheet" href="/css/assets/font-awesome.min.css">
+
+                    <!-- Animate Css -->
+                    <link rel="stylesheet" href="/css/assets/animate.css">
+
+                    <!-- Owl Slider -->
+                    <link rel="stylesheet" href="/css/assets/owl.carousel.min.css">
+
+                    <!-- Date Picker -->
+                    <link rel="stylesheet" href="/css/assets/tempusdominus-bootstrap-4.min.css">
+
+                    <!-- Magnific PopUp -->
+                    <link rel="stylesheet" href="/css/assets/magnific-popup.css">
+
+                    <!-- Custom Style -->
+                    <link rel="stylesheet" href="/css/assets/normalize.css">
+                    <link rel="stylesheet" href="/css/style.css">
+                    <link rel="stylesheet" href="/css/assets/responsive.css">
+                    <link rel="stylesheet" type="text/css" href="/stylesheets/static.css">
+                    <link rel="stylesheet" type="text/css" href="/stylesheets/stars.css">
+
+
+
+    </head>
+
+    <body>
+        <%- include('../partials/home-navbar') %>
+            <div class="col-md-6 offset-3" style="width: 100%;">
+                <%- include('../partials/flash') %>
+            </div>
+            <%- body %>
+                <%- include('../partials/home-footer') %>
+
+
+    </body>
+    <!-- =========================================
+            JavaScript Files
+            ========================================== -->
+
+    <!-- jQuery JS -->
+    <script src="/js/assets/vendor/jquery-1.12.4.min.js"></script>
+    <!-- <script src="/js/jquery.min.js"></script> -->
+
+    <!-- Bootstrap -->
+    <script src="/js/assets/popper.min.js"></script>
+    <script src="/js/assets/bootstrap.min.js"></script>
+    <!-- Tinymce -->
+    <script type="application/javascript" src="../../tinymce/tinymce.min.js"></script>
+
+    <!-- Wow Animation -->
+    <script src="/js/assets/wow.min.js"></script>
+
+    <!-- Owl Slider -->
+    <script src="/js/assets/owl.carousel.min.js"></script>
+
+    <!-- Date Picker -->
+    <script src="/js/assets/moment.min.js"></script>
+    <script src="/js/assets/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Isotope -->
+    <script src="/js/assets/isotope.pkgd.min.js"></script>
+
+    <!-- Magnific PopUp -->
+    <script src="/js/assets/magnific-popup.min.js"></script>
+
+    <!-- Counter Up -->
+    <script src="/js/assets/counterup.min.js"></script>
+    <script src="/js/assets/waypoints.min.js"></script>
+
+    <!-- Smooth Scroll -->
+    <script src="/js/assets/smooth-scroll.js"></script>
+
+    <!-- Syotimer -->
+    <script src="/js/assets/jquery.syotimer.min.js"></script>
+
+    <!-- Mean Menu -->
+    <script src="/js/assets/jquery.meanmenu.min.js"></script>
+
+    <!-- Form Validation -->
+    <script src="/js/assets/form.js"></script>
+
+    <!-- Custom JS -->
+    <script src="/js/plugins.js"></script>
+    <script src="/js/custom.js"></script>
+    <script src="/js/validateForms.js"></script>
+
+    <!-- <script type="text/javascript" src="/plugin/tinymce/tinymce.min.js"></script> -->
+    <!-- <script type="text/javascript" src="/plugin/tinymce/init-tinymce.js"></script> -->
+    <script type="text/javascript" src="/js/my-tinymce-config.js"></script>
+    <script type="application/javascript">
+        $('.custom-file input').change(function (e) {
+            var files = [];
+            for (var i = 0; i < $(this)[0].files.length; i++) {
+                files.push($(this)[0].files[i].name);
+            }
+            $(this).next('.custom-file-label').html(files.join(', '));
+        });
+        // $('input[type="file"]').change(function (e) {
+        //     var fileName = e.target.files[0].name;
+        //     $('.custom-file-label').html(fileName);
+        // });
+    </script>
+
+    </body>
+
+</html>

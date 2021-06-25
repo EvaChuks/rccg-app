@@ -1,0 +1,155 @@
+<% layout('layouts/home-theme') %>
+    <!-- Breadcrumb Area -->
+    <section class="breadcrumb-area text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>New Parish</h2>
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item"><a href="/parish">Parish</a></li>
+                        <li class="list-inline-item"><i class="fa fa-long-arrow-right"></i>Add New Parish</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Breadcrumb Area -->
+    <div class="container justify-content-center align-items-center mt-4 mb-4">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="contact-form">
+                    <div class="">
+                        <img src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+                            alt="" class="card-img-top" />
+                        <h1 class="text-center">Update Parish</h1>
+                        <div class="col-12  ">
+                            <form action="/parish/<%= parish.slug %>?_method=PUT " method="POST" novalidate class="validated-form"
+                                enctype="multipart/form-data">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="title" class="form-label">Parish:</label>
+                                            <input type="text" name="parish[churchName]" id="title" class="form-control"
+                                                required value="<%= parish.churchName %> ">
+
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="location" class="form-label">Located:</label>
+                                            <input type="text" name="parish[location]" id="location"
+                                                class="form-control" required value="<%= parish.location %> ">
+
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="pastor" class="form-label">Parish Pastor:</label>
+                                            <input type="text" name="parish[pastor]" id="pastor" class="form-control"
+                                                required value="<%= parish.pastor %> ">
+
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Email Address:</label>
+                                            <input type="email" name="parish[email]" id="email" class="form-control"
+                                                required value="<%= parish.email %> ">
+
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="twitter" class="form-label">Twitter:</label>
+                                            <input type="text" name="parish[twitter]" id="twitter" class="form-control" value="<%= parish.twitter %> ">
+
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="whatsapp" class="form-label">WhatsApp:</label>
+                                            <input type="text" name="parish[whatsapp]" id="whatsapp"
+                                                class="form-control" value="<%= parish.whatsapp %> ">
+
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="facebook" class="form-label">Facebook:</label>
+                                            <input type="text" name="parish[facebook]" id="facebook"
+                                                class="form-control" required value="<%= parish.facebook %> ">
+
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="youtube" class="form-label">Youtube:</label>
+                                            <input type="text" name="parish[youtube]" id="youtube" class="form-control" value="<%= parish.youtube %> ">
+
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="title" class="form-label">Tel:</label>
+                                            <input type="tel" name="parish[phone]" id="phone" class="form-control"
+                                                required value="<%= parish.phone %> ">
+
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="my-expressjs-tinymce-app"
+                                                class="form-label my-expressjs-tinymce-app">Berif
+                                                Story:</label>
+                                            <textarea rows="10" cols="50" type="text" name="parish[description]"
+                                                id="my-expressjs-tinymce-app"
+                                                class="form-control tinymce my-expressjs-tinymce-app"
+                                                required><%- parish.description %></textarea>
+
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="mb-3">
+                                            <label for="my-expressjs-tinymce-app"
+                                                class="form-label my-expressjs-tinymce-app">Monthly
+                                                Activities:</label>
+                                            <textarea rows="10" cols="50" type="text" name="parish[monthlyAct]"
+                                                id="my-expressjs-tinymce-app"
+                                                class="form-control tinymce my-expressjs-tinymce-app"
+                                                required><%- parish.monthlyAct %></textarea>
+                                        </div>
+
+                                        <!-- <div class="mb-3">
+                                            <label for="my-expressjs-tinymce-app"
+                                                class="form-label my-expressjs-tinymce-app">Weekly
+                                                Activities:</label>
+                                            <textarea rows="10" cols="50" type="text" name="parish[weeklyAct]"
+                                                id="my-expressjs-tinymce-app"
+                                                class="form-control tinymce my-expressjs-tinymce-app"
+                                                required><%- parish.weeklyAct %> </textarea>
+
+                                        </div> -->
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                            </div>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                                    aria-describedby="inputGroupFileAddon01" name="image" multiple>
+                                                <label class="custom-file-label" for="inputGroupFile01">Choose
+                                                    file</label>
+                                            </div>
+                                        </div>
+                                            <div class="mb-3">
+                                                <% parish.images.forEach(function(img, i){ %>
+                                                    <img src="<%=img.thumbnail%>" class="img-thumbnail">
+                                                    <div class="form-check form-check-inline">
+                                                        <input type="checkbox" id="image-<%=i%>" name="deleteImages[]" value="<%=img.filename%>">
+                                                    </div>
+                                                    <label for="image-<%=i%>">Delete</label>
+                                            
+                                                    <% }) %>
+                                            </div>
+                                        <div class="mb-3 ">
+                                            <button class="btn btn-lg btn-success btn-block">Add New Parish</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <a href="/parish">Back to Locator</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>

@@ -1,0 +1,48 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">INDIA PROVINCE II</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav">
+                <a class="nav-link active" href="/">Home</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        About RCCG
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="/about/mandate">Mandate</a></li>
+                        <li><a class="dropdown-item" href="/about/our-history">Our History</a></li>
+                        <li><a class="dropdown-item" href="/about/our-beliefs">Our Beliefs</a></li>
+                        <li><a class="dropdown-item" href="/about/daddy-go">PASTOR ENOCH ADEJARE ADEBOYE</a></li>
+                        <li><a class="dropdown-item" href="/about/mummy-go">PASTOR (MRS) FOLU ADEBOYE</a></li>
+                        <li><a class="dropdown-item" href="/about/our-trustees">Our Trustees</a></li>
+                        <li><a class="dropdown-item" href="/about/zonal-pastors">Zonal Pastors</a></li>
+                        <!-- <li><a class="dropdown-item" href="/about/zonal-offices">RCCG India zonal Offices</a></li> -->
+                        <li><a class="dropdown-item" href="/about/headquaters">RCCG India mission Office</a></li>
+                        <li><a class="dropdown-item" href="/about/our-ministeries">Our Ministries</a></li>
+
+                    </ul>
+
+                </li>
+                <!-- <a class="nav-link" href="/campgrounds">Campgrounds</a>
+                <a class="nav-link" href="/campgrounds/new">New Campground</a> -->
+                <a class="nav-link" href="/contact">Contact Us</a>
+            </div>
+            <div class="navbar-nav ms-auto ">
+                <% if(!currentUser){%>
+                    <a class="nav-link" href="/login">Login</a>
+                    <a class="nav-link" href="/register">Sign Up</a>
+
+                    <%} else {%>
+                        <a class="nav-link" href="/logout">Logout</a>
+                        <% } %>
+
+            </div>
+        </div>
+
+    </div>
+</nav>

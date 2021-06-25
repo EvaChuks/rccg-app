@@ -1,0 +1,113 @@
+<% layout('layouts/home-theme') %>
+    <!-- Breadcrumb Area -->
+    <section class="breadcrumb-area text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>LogIn</h2>
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item"><a href="">Home</a></li>
+                        <li class="list-inline-item"><i class="fa fa-long-arrow-right"></i>LogIn</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Breadcrumb Area -->
+    <div class="container d-flex justify-content-center align-items-center mt-3 mb-4">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 col-xl-6 offset-xl-3">
+                <div class="card shadow">
+                    <img src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+                        alt="" class="card-img-top" />
+                    <div class="card-body">
+                        <h5 class="text-center">Registration Form</h5>
+                        <form action="/admin" method="POST" novalidate class="needs-validation"
+                            enctype="multipart/form-data">
+                            <div class="mb-3 form-group">
+                                <label for="firstname" class="form-label">Firstname:</label>
+                                <input type="text" name="firstname" id="firstname" class="form-control" required
+                                    autofocus>
+                            </div>
+                            <div class="mb-3 form-group">
+                                <label for="lastname" class="form-label">Lastname:</label>
+                                <input type="text" name="lastname" id="lastname" class="form-control" required>
+                            </div>
+                            <div class="mb-3 form-group">
+                                <label for="phone" class="form-label">Phone:</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" required>
+                            </div>
+                            <div class="mb-3 form-group">
+                                <label for="username" class="form-label">Username:</label>
+                                <input type="text" name="username" id="username" class="form-control" required>
+
+                            </div>
+                            <div class="mb-3 form-group">
+                                <label for="location" class="form-label">Location:</label>
+                                <input type="text" name="location" id="location" class="form-control" required>
+
+                            </div>
+                            <div class="form-group">
+                                <select class="custom-select" name="department" required>
+                                    <option value="">Which department do you belong to?</option>
+                                    <option value="Choir">Choir</option>
+                                    <option value="Prayer Band">Prayer Band</option>
+                                    <option value="Ushers">Ushers</option>
+                                    <option value="Visitation Band">Visitation Band</option>
+                                    <option value="Media and Technical">Media and Technical</option>
+                                    <option value="Children Ministry">Children Ministry</option>
+                                    <option value="Stewards">Stewards</option>
+                                    <option value="Just a Member">Just a Member</option>
+                                </select>
+                                <div class="invalid-feedback">Example invalid custom select feedback</div>
+                            </div>
+                            <div class="mb-3 form-group">
+                                <label for="password" class="form-label">Password:</label>
+                                <input type="password" name="password" id="password" class="form-control" required>
+
+                            </div>
+                            <div class="mb-3 form-group">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" name="email" id="email" class="form-control" required>
+
+                            </div>
+                            <div class="mb-3 form-group">
+                                <label for="admincode" class="form-label">Admin Code:</label>
+                                <input type="email" name="admincode" placeholder="admin code" id="admincode"
+                                    class="form-control" required>
+
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="desc" class="form-label">Message:</label>
+                                <textarea rows="10" cols="50" type="text" name="description" id="desc"
+                                    class="form-control tinymce"
+                                    placeholder="Tell us about yourself &#10; include your date of birth and position in your church"
+                                    required></textarea>
+
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                        aria-describedby="inputGroupFileAddon01" name="image" multiple>
+                                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                </div>
+                            </div>
+                            <div class="mb-3 ">
+                                <button class="btn btn-primary btn-block">Sign Up</button>
+
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>

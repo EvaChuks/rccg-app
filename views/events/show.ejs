@@ -1,0 +1,88 @@
+<% layout('layouts/home-theme') %>
+    <!-- Breadcrumb Area -->
+    <section class="breadcrumb-area text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2><%= event.title %> </h2>
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item"><a href="/events">event</a></li>
+                        <li class="list-inline-item"><i class="fa fa-long-arrow-right"></i><%= event.starts %> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Breadcrumb Area -->
+    <!-- Blog Area -->
+    <section class="blog-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-8">
+                    <div class="blog-d-box">
+                        <div class="image-box">
+                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <% event.images.forEach((img, i)=>{ %>
+                                        <div class="carousel-item <%=  i === 0 ? 'active' : '' %> ">
+                                            <img src="<%= img.url %> " class="d-block w-100" alt="">
+                                        </div>
+                                        <% }) %>
+
+                                </div>
+                                <% if(event.images.length> 1) { %>
+                                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                                        data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                                        data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+
+
+                                    <% } %>
+                            </div>
+                            <!-- <img src="images/news-7.jpg" alt="" class="img-fluid"> -->
+                        </div>
+                        <div class="image-content">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><%= event.title %></h5>
+                                <p class="card-text text-muted text-capitalize text-center">
+                                    <%- event.description %>
+                                </p>
+                                <p class="card-text"><strong>Venue: </strong><i class="fa fa-map-marker"></i>
+                                <%= event.venue %></p>
+                                <p class="card-text"><i class="fa fa-calendar"></i>
+                                From <%= event.starts %></p>
+                                <p class="card-text"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                                Program starts <strong>
+                                    <%= event.time %> Prompt
+                                </strong></p>
+                                <p class="card-text"><i class="fa fa-calendar"></i>
+                                Program Ends: <%= event.ends %></p>
+                                <p class="card-text">Host: <%=event.host %> and other Anointed men of God</p>
+                            </div>
+                            
+                        </div>
+                        <% if(currentUser && currentUser.isAdmin){ %>
+                            <div class="card-body">
+                                <a href="/events/<%=event.slug %>/edit " class="btn btn-primary">Edit
+                                    Sermon</a>
+                                <form class="d-inline" action="/events/<%=event.slug %>?_method=DELETE" method="POST">
+                                    <button class="btn btn-danger">Delete </button>
+                                </form>
+
+                            </div>
+                            <% } %>
+
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+    <!-- End Blog Area -->

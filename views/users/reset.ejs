@@ -1,0 +1,32 @@
+<% layout('layouts/boilerplate') %>
+    <div class="container d-flex justify-content-center align-items-center mt-3 mb-4">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+                <div class="card shadow">
+                    <img src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+                        alt="" class="card-img-top" />
+                    <div class="card-body">
+                        <h5 class="text-center">Reset Password</h5>
+                        <form action="/reset/<%= token %>" method="POST" novalidate class="validated-form">
+                            <div class="mb-3">
+                                <label for="password" class="form-label">New Password:</label>
+                                <input type="password" name="password" id="password" class="form-control" placeholder="New password" required autofocus>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Confirm Password:</label>
+                                <input type="password" name="confirm" id="password" class="form-control" placeholder="confirm password" required>
+                            </div>
+                            <div class="mb-3 d-grid gap-2">
+                                <button class="btn btn-primary ">Update Password</button>
+
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>

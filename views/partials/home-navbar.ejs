@@ -1,0 +1,199 @@
+<!-- Top Bar -->
+<section class="top-bar" id="btt">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-9">
+                <div class="bar-content">
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item"><img src="images/phone.png" alt="">+91 948 6453</li>
+                        <!-- <li class="list-inline-item"><img src="images/clock.png" alt="">Mon - Sun 7:30am - 9:30pm</li> -->
+                        <li class="list-inline-item"><img src="images/mail.png" alt="">info@rccgindiamission.com</li>
+                       
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-3">
+                <div class="top-social text-right">
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item"><a href=""><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href=""><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href=""><i class="fa fa-linkedin"></i></a></li>
+                        <li class="list-inline-item"><a href=""><i class="fa fa-google-plus"></i></a></li>
+                        <li class="list-inline-item">
+                            <span><button type="button" data-toggle="modal" data-target="#model-box">Send Your Prayer
+                                    Request</button></span>
+                            <!-- Appointment Box -->
+                            <div class="modal fade" id="model-box">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content text-center">
+                                        <div class="medel-box-top">
+                                            <h4>Prayer Request</h4>
+                                            <img src="https://res.cloudinary.com/ihezurumba/image/upload/c_scale,w_32/v1624608119/rccg-app/christ_t3h8gb.png" alt="">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </div>
+                                        <form action="#">
+                                            <input type="text" name="name" placeholder="Full Name" required>
+                                            <input type="text" name="phone" placeholder="Phone Number" required>
+                                            <input type="text" name="email" placeholder="Email Address" required>
+                                            <input type="text" id="datetimepicker" data-toggle="datetimepicker"
+                                                data-target="#datetimepicker" name="appdate"
+                                                placeholder="Appointment Date">
+                                            <textarea name="message" placeholder="Message" required></textarea>
+                                            <button type="submit">Submit</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Top Bar -->
+
+<!-- Logo Area -->
+<section class="logo-area menu-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="logo">
+                    <a href=""><img src="https://res.cloudinary.com/ihezurumba/image/upload/w_190,h_54,ar_16:9,c_fill,g_auto,e_sharpen/v1624607352/rccg-app/logo_w8xs6e.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="main-menu text-right">
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item active"><a href="/">HOME </a>
+                            <ul>
+                            </ul>
+                        </li>
+                        <li class="list-inline-item"><a>Who We Are <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown list-unstyled">
+                                <li><a href="/about/mandate">Mandate</a></li>
+                                <li><a href="/about/our-history">Our History</a></li>
+                                <li><a href="/about/our-beliefs">Our Beliefs</a></li>
+                                <li><a href="/about/daddy-go">PASTOR ENOCH ADEJARE ADEBOYE</a></li>
+                                <li><a href="/about/mummy-go">PASTOR (MRS) FOLU ADEBOYE</a></li>
+                                <li><a href="/about/our-trustees">Our Trustees</a></li>
+                                <li><a href="/about/zonal-pastors">Zonal Pastors</a></li>
+                                <li><a href="/about/headquaters">RCCG India mission Office</a></li>
+                                <li><a href="/about/our-ministeries">Our Ministries</a></li>
+                            </ul>
+                        </li>
+                        <li class="list-inline-item"><a>What We Do <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown list-unstyled">
+                                <li><a href="05-about-us.html">About Us</a></li>
+                                <li><a href="05-about-us.html">About Us</a></li>
+                                <li><a href="05-about-us.html">About Us</a></li>
+                                <li><a href="05-about-us.html">About Us</a></li>
+                                <li><a href="05-about-us.html">About Us</a></li>
+                                <li><a href="05-about-us.html">About Us</a></li>
+                            </ul>
+                        </li>
+                        <li class="list-inline-item"><a href="/contact">Contact</a>
+                            <ul>
+                            </ul>
+                        </li>
+                        <li class="list-inline-item"><a>Sermons <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown list-unstyled">
+                                <li><a href="/sermons">All Sermons</a></li>
+                                <li><a href="/sermons/new">Add New Sermon</a></li>
+                            </ul>
+                        </li>
+                        <li class="list-inline-item"><a>Church Locator <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown list-unstyled">
+                                <li><a href="/parish">All Parish</a></li>
+                                <% if(currentUser && currentUser.isAdmin) {%>
+                                    <li><a href="/parish/new">Add New Parish</a></li>
+                                    <% } %>
+                            </ul>
+                        </li>
+                        <li class="list-inline-item">
+                            <% if(!currentUser){%>
+                                <li class="list-inline-item"><a href="/login">Login</a></li>
+                                <li class="list-inline-item"><a href="/register">Sign Up</a></li>
+                                <%} else {%>
+                                <li class="list-inline-item"><a href="/logout">Logout</a></li>
+                                
+                                    <% } %>
+                        </li>
+                        <!-- <a class="list-unstyled" href="/login">Login</a>
+                        <a class="list-unstyled" href="/register">Sign Up</a> -->
+                        
+                        
+                        <!-- <li class="list-inline-item msearch-bar">
+                        
+                            <form action="/search" method="GET">
+                                <input type="text" name="search" placeholder="Search Here">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                            
+                        </li> -->
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Logo Area -->
+
+<!-- Mobile Menu -->
+<section class="mobile-menu-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mobile-menu">
+                    <nav id="dropdown">
+                        <a href=""><img src="https://res.cloudinary.com/ihezurumba/image/upload/w_190,h_54,ar_16:9,c_fill,g_auto,e_sharpen/v1624607352/rccg-app/logo_w8xs6e.png" alt=""></a>
+                        <a href=""><i class="fa fa-bell-o"></i></a>
+                        <ul class="list-unstyled">
+                            <li><a href="/">Home</a></li>
+                            <!-- <li><a href="">Home</a>
+                                <ul class="list-unstyled">
+                                    <li><a href="index.html">Home Style 1</a></li>
+                                    <li><a href="index2.html">Home Style 2</a></li>
+                                    <li><a href="index3.html">Home Style 3</a></li>
+                                    <li><a href="index4.html">Home Style 4</a></li>
+                                </ul>
+                            </li> -->
+                            <li><a href="/about/our-history">Who We Are</a>
+                                <ul class="list-unstyled">
+                                    <li><a href="/about/mandate">Mandate</a></li>
+                                    <li><a href="/about/our-history">Our History</a></li>
+                                    <li><a href="/about/our-beliefs">Our Beliefs</a></li>
+                                    <li><a href="/about/daddy-go">PASTOR ENOCH ADEJARE ADEBOYE</a></li>
+                                    <li><a href="/about/mummy-go">PASTOR (MRS) FOLU ADEBOYE</a></li>
+                                    <li><a href="/about/our-trustees">Our Trustees</a></li>
+                                    <li><a href="/about/zonal-pastors">Zonal Pastors</a></li>
+                                    <li><a href="/about/headquaters">RCCG India mission Office</a></li>
+                                    <li><a href="/about/our-ministeries">Our Ministries</a></li>
+                                </ul>
+                            </li>
+                            <!-- <li><a href="">Service</a></li> -->
+                            <li><a>What We Do </a>
+                                <ul class="list-unstyled">
+                                    <li><a href="05-about-us.html">About Us</a></li>
+                                    <li><a href="05-about-us.html">About Us</a></li>
+                                    <li><a href="05-about-us.html">About Us</a></li>
+                                    <li><a href="05-about-us.html">About Us</a></li>
+                                    <li><a href="05-about-us.html">About Us</a></li>
+                                    <li><a href="05-about-us.html">About Us</a></li>
+                                </ul>
+                            </li>
+                            <!-- <li><a href="">Departments</a></li> -->
+                            <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="/blog">Sermons</a></li>
+                            <li><a href="/church-locator">Church Locator</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

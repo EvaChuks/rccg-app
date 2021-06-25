@@ -1,0 +1,71 @@
+<% layout('layouts/home-theme') %>
+    <!-- Breadcrumb Area -->
+    <section class="breadcrumb-area text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>
+                        <%= user.firstname%>
+                    </h2>
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item"><a href="">Home</a></li>
+                        <li class="list-inline-item"><i class="fa fa-long-arrow-right"></i>
+                            <%= user.firstname %>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Breadcrumb Area -->
+    <!-- User Details -->
+    <section class="doc-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="doc-image">
+                                <img src="<%=user.images[0].thumbnail  %> " alt="" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="open-hr">
+                                <h6>Parish:  <%= user.location %> </h6>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="doc-pro">
+                                <h4>
+                                    <%= user.firstname + " " + user.lastname %>
+                                </h4>
+                                <p><strong>Bio Data:</strong> <%= user.description %> </p>
+                                <span><i class="fa fa-envelope" aria-hidden="true">: </i>walter4chuks@gmail.com</span>
+                                <h3>
+                                    <p><strong>Department in the church:</strong><%= user.department %></p>
+                                    <p><strong>Tel: </strong><%= user.phone %> </p>
+                                    <%= user.username %>'s sermons:
+                                </h3>
+                                <ul>
+                                    <% sermons.forEach(function(sermon) { %>
+                                        <li><a href="/sermons/<%= sermon.id %>">
+                                                <%= sermon.title %>
+                                            </a></li>
+                                        <% }); %>
+                                </ul>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End User Details -->

@@ -1,0 +1,85 @@
+<% layout('layouts/home-theme') %>
+    <!-- Breadcrumb Area -->
+    <section class="breadcrumb-area text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Share the goodness of your God</h2>
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item"><a href="/">Home</a></li>
+                        <li class="list-inline-item"><i class="fa fa-long-arrow-right"></i>New Testimony</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Breadcrumb Area -->
+    <div class="container justify-content-center align-items-center mt-4 mb-4">
+        <div class="row">
+            <div class="col-md-10 offset-1">
+                <div class="contact-form">
+                    <div class="">
+                        <img src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+                            alt="" class="card-img-top" />
+                        <h1 class="text-center">New Event</h1>
+                        <div class="col-10 offset-1 ">
+                            <form action="/events" method="POST" novalidate class="validated-form"
+                                enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <label for="title" class="form-label">Title:</label>
+                                    <input type="text" name="event[title]" id="title" class="form-control" required>
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="venue" class="form-label">Venue:</label>
+                                    <input type="text" name="event[venue]" id="venue" class="form-control" required>
+                                
+                                </div>
+                                <div class="mb-3">
+                                    <label for="starts" class="form-label">Starts:</label>
+                                    <input type="text" name="event[starts]" id="starts" class="form-control" required>
+                                
+                                </div>
+                                <div class="mb-3">
+                                    <label for="ends" class="form-label">End:</label>
+                                    <input type="text" name="event[ends]" id="ends" class="form-control" required>
+                                
+                                </div>
+                                <div class="mb-3">
+                                    <label for="time" class="form-label">Time:</label>
+                                    <input type="text" name="event[time]" id="time" class="form-control" required>
+                                
+                                </div>
+                                <div class="mb-3">
+                                    <label for="host" class="form-label">Host:</label>
+                                    <input type="text" name="event[host]" id="host" class="form-control" required>
+                                
+                                </div>
+                                <div class="mb-3">
+                                    <label for="my-expressjs-tinymce-app" class="form-label">Message:</label>
+                                    <textarea rows="5" cols="30" type="text" name="event[description]"
+                                        id="my-expressjs-tinymce-app"
+                                        class="form-control tinymce my-expressjs-tinymce-app" required></textarea>
+
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                    </div>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                            aria-describedby="inputGroupFileAddon01" name="image" multiple>
+                                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                    </div>
+                                </div>
+                                <div class="mb-3 ">
+                                    <button class="btn btn-lg btn-success btn-block">Add New Event</button>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

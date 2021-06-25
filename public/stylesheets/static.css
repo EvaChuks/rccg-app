@@ -1,0 +1,40 @@
+.dropdown-menu.show{
+    background-color: #DCDCDC;
+}
+a.dropdown-item:nth-of-type(even){
+    background-color: #fff;
+}
+a.dropdown-item:nth-of-type(odd){
+    background-color: #DCDCDC;
+}
+
+
+a.dropdown-item:focus, a.dropdown-item:hover{
+    background-color: black;
+}
+ul{
+    list-style-type: none;
+}
+.img-text{
+    text-decoration: none;
+    line-height: 1.4;
+    text-align: left;
+}
+span.carbon-wrap{
+    box-sizing: border-box;
+}
+.carbon-wrap img.img-fluid{
+    vertical-align: middle;
+    float: left;
+    padding-right: 25px;
+    padding-bottom: 30px;
+}
+#rccg-logo img.img-fluid{
+    vertical-align: middle;
+    float: right;
+    padding-left: 30px;
+}
+i.fa.fa-arrow-right{
+    margin-right: 10px;
+    color:teal;
+}

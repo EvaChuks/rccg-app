@@ -1,0 +1,140 @@
+<% layout('layouts/home-theme') %>
+    <!-- Breadcrumb Area -->
+    <section class="breadcrumb-area text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <h2>All Our Parishes </h2>
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item"><a href="/">Home</a></li>
+                        <li class="list-inline-item"><i class="fa fa-long-arrow-right"></i>All Our Parishes</li>
+                    </ul>
+                    <div class="col-md-6 offset-3">
+                        <li class="msearch-bar  searchbar">
+                            <form action="/parish" method="GET" class="form-inline">
+                                <input type="text" name="search" placeholder="Search Here" class="form-control">
+                                <button type="submit" class="btn btn-secondary">Search</button>
+                            </form>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Breadcrumb Area -->
+    <div class="col-md-12">
+        <div id="cluster-map" style="width: 100%; height: 300px;"></div>
+    </div>
+    <!-- Blog Area -->
+    <section class="blog-three">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+                        <div class="col-md-12">
+                            <% if(noMatch !==null) { %>
+                                <h3>
+                                    <%= noMatch %>
+                                </h3>
+                                
+                                <% } %>
+                        </div>
+                    </div>
+                    <% for(let parish of parishes) {%>
+                        <div class="blog-box d-flex">
+                            <div class="blog-image">
+                                <% if(parish.images.length){ %>
+                                    <a href=""><img class="img-fluid" src="<%=parish.images[0].thumbnail  %> ">
+                                        <% }else{ %>
+                                            <img class="img-fluid"
+                                                src="https://image.shutterstock.com/image-photo/word-default-on-wooden-cubes-600w-291927557.jpg">
+
+                                            <% } %>
+                                    </a>
+                            </div>
+                            <div class="blog-content">
+                                <h5><a href="">
+                                        <%= parish.churchName %>
+                                    </a></h5>
+
+                                <p>
+                                    <%- parish.description.substring(0, 150) %>
+                                        <span><a href="parish/<%=parish.slug  %> ">Visit Our Page</a></span>
+                                </p>
+
+                            </div>
+                        </div>
+                        <% } %>
+                        <!-- pagination -->
+                        <nav aria-label="Page navigation">
+                            <% if (pages && pages> 0) { %>
+                                <ul class="pagination justify-content-center">
+                                    <% if (current==1) { %>
+                                        <li class="page-item disabled"><a class="page-link">First</a></li>
+                                        <% } else { %>
+                                            <li><a class="page-link" href="/parish">First</a></li>
+                                            <% } %>
+                        
+                                                <% if (current==1) { %>
+                                                    <li class="page-item disabled"><a class="page-link">«</a></li>
+                                                    <% } else { %>
+                                                        <li><a class="page-link" href="/parish?page=<%= Number(current) - 1 %>">«</a></li>
+                                                        <% } %>
+                        
+                                                            <% var i=(Number(current)> 5 ? Number(current) - 4 : 1) %>
+                                                                <% if (i !==1) { %>
+                                                                    <li class="page-item disabled"><a class="page-link">...</a></li>
+                                                                    <% } %>
+                                                                        <% for (; i <=(Number(current) + 4) && i <=pages; i++) { %>
+                                                                            <% if (i==current) { %>
+                                                                                <li class="active"><a class="page-link">
+                                                                                        <%= i %>
+                                                                                    </a></li>
+                                                                                <% } else { %>
+                                                                                    <li><a class="page-link" href="/parish?page=<%= i %>">
+                                                                                            <%= i %>
+                                                                                        </a></li>
+                                                                                    <% } %>
+                                                                                        <% if (i==Number(current) + 4 && i < pages) { %>
+                                                                                            <li class="page-item disabled"><a
+                                                                                                    class="page-link">...</a></li>
+                                                                                            <% } %>
+                                                                                                <% } %>
+                        
+                                                                                                    <% if (current==pages) { %>
+                                                                                                        <li class="page-item disabled"><a
+                                                                                                                class="page-link">»</a></li>
+                                                                                                        <% } else { %>
+                                                                                                            <li><a class="page-link"
+                                                                                                                    href="/parish?page=<%= Number(current) + 1 %>">»</a>
+                                                                                                            </li>
+                                                                                                            <% } %>
+                        
+                                                                                                                <% if (current==pages) { %>
+                                                                                                                    <li
+                                                                                                                        class="page-item disabled">
+                                                                                                                        <a
+                                                                                                                            class="page-link">Last</a>
+                                                                                                                    </li>
+                                                                                                                    <% } else { %>
+                                                                                                                        <li><a class="page-link"
+                                                                                                                                href="/parish?page=<%= pages %>">Last</a>
+                                                                                                                        </li>
+                                                                                                                        <% } %>
+                                </ul>
+                                <% } %>
+                        </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script>
+        const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
+        const parishes = { features: <%- JSON.stringify(parishes) %>}
+
+    </script>
+    <script src="/js/clusterMap.js"></script>

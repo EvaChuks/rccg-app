@@ -1,0 +1,82 @@
+<% layout('layouts/home-theme') %>
+    <!-- Breadcrumb Area -->
+    <section class="breadcrumb-area text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Share the word of God</h2>
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item"><a href="/sermons">Sermons</a></li>
+                        <li class="list-inline-item"><i class="fa fa-long-arrow-right"></i>Add New Sermon</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Breadcrumb Area -->
+    <div class="container justify-content-center align-items-center mt-4 mb-4">
+        <div class="row">
+            <div class="col-md-10 offset-1">
+                <div class="contact-form">
+                    <div class="">
+                        <div class="col-10 offset-1 ">
+                            <img src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+                                alt="" class="card-img-top" style="height: 400px;" />
+                        </div>
+                       
+                        <h1 class="text-center">New Sermon</h1>
+                        <div class="col-10 offset-1 ">
+                            <form action="/sermons" method="POST" novalidate class="validated-form"
+                                enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <label for="title" class="form-label">Title:</label>
+                                    <input type="text" name="sermon[title]" id="title" class="form-control" required>
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="bibleText" class="form-label">Bible Text:</label>
+                                    <input type="text" name="sermon[bibleText]" id="bibleText" class="form-control"
+                                        required>
+
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="my-expressjs-tinymce-app" class="form-label">Message:</label>
+                                    <textarea rows="10" cols="50" type="text" name="sermon[content]"
+                                        id="my-expressjs-tinymce-app"
+                                        class="form-control tinymce my-expressjs-tinymce-app" required></textarea>
+
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                    </div>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                            aria-describedby="inputGroupFileAddon01" name="image" multiple>
+                                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                    </div>
+                                </div>
+                                <!-- <div class="mb-4">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFile" name="image"
+                                            multiple>
+                                        <label class="custom-file-label" for="customFile">
+                                            <span class="form-file-text custom-file-label"></span>
+                                            Choose file</label>
+                                    </div>
+                                </div> -->
+                                <div class="mb-3 ">
+                                    <button class="btn btn-lg btn-success btn-block">Add Sermon</button>
+
+                                </div>
+
+                                <a href="/sermons">All Sermons</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
